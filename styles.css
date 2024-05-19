@@ -4,11 +4,23 @@ body {
     font-weight: 400; /* Default weight, you can adjust this as needed */
     margin: 0;
     padding: 0;
-    background: linear-gradient(to right, #ffecd2, #fcb69f);
+    background: url('../images/Background.png') no-repeat center center/cover;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     position: relative; 
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: none; /* 去掉伪元素的背景 */
+    z-index: -1; /* 确保背景图在其他内容的后面 */
+    opacity: 0.5; /* 可选：调整背景图的透明度 */
 }
 
 .language-switcher {
@@ -241,3 +253,5 @@ footer ul li a:hover {
         font-size: 18px;
     }
 }
+
+
