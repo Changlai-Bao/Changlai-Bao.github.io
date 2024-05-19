@@ -73,6 +73,11 @@ h1, p {
     border-radius: 10px;
     max-width: 100%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s; /* 添加过渡效果 */
+}
+
+.profile-image img:hover {
+    transform: scale(1.05); /* 悬停时放大图片 */
 }
 
 .profile-content {
