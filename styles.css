@@ -1,18 +1,50 @@
-/* 保留原有样式 */
+/* 滑动效果的关键帧动画 */
+@keyframes slideIn {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+}
+
+/* 初始隐藏状态 */
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* 防止水平滚动条 */
+    width: 100%; /* 确保宽度为100% */
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
     font-optical-sizing: auto;
     font-weight: 400; /* 默认字体重量，可以根据需要调整 */
     margin: 0;
     padding: 0;
-    background: url('../images/Background.png') no-repeat center center/cover;
+    background: url('../images/Background.png') no-repeat center center / cover; /* 调整背景图片设置 */
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     position: relative;
     opacity: 0;
     visibility: hidden; /* 初始状态为隐藏 */
-    transition: opacity 0.5s ease, visibility 0.5s ease; /* 使用过渡效果 */
+    transform: translateY(20px); /* 初始滑动位置 */
+    transition: opacity 0.5s ease, visibility 0.5s ease, transform 0.5s ease; /* 使用过渡效果 */
+    overflow-x: hidden; /* 防止页面水平溢出 */
 }
 
 body::before {
@@ -76,6 +108,8 @@ h1, p {
     align-items: center;
     padding: 50px;
     padding-top: 70px; /* 添加填充以避免与语言切换器重叠 */
+    max-width: 100%; /* 确保容器宽度不超过100% */
+    box-sizing: border-box; /* 包括内边距和边框在内 */
 }
 
 /* 针对 index 页面添加特定样式 */
@@ -252,6 +286,8 @@ footer {
     padding: 20px;
     text-align: center;
     border-top: 1px solid #ccc;
+    width: 100%; /* 确保宽度不超过视口宽度 */
+    box-sizing: border-box; /* 包括内边距和边框在内 */
 }
 
 footer p {
@@ -363,24 +399,28 @@ footer ul li a:hover {
 }
 
 /* 添加动画效果 */
-@keyframes fadeIn {
+@keyframes slideIn {
     from {
+        transform: translateY(20px);
         opacity: 0;
     }
     to {
+        transform: translateY(0);
         opacity: 1;
     }
 }
 
-@keyframes fadeOut {
+@keyframes slideOut {
     from {
+        transform: translateY(0);
         opacity: 1;
     }
     to {
+        transform: translateY(20px);
         opacity: 0;
     }
 }
 
 body.fade-out {
-    animation: fadeOut 0.2s forwards; /* 页面跳转时淡出 */
+    animation: slideOut 0.5s forwards; /* 页面跳转时淡出 */
 }
