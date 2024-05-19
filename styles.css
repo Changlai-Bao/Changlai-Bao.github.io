@@ -193,7 +193,7 @@ body#index-page .social-icons {
 
 .social-icons a {
     color: #000;
-    margin: 0 10px;
+    margin: 0 5px; /* 减小图标之间的水平间距 */
     font-size: 24px;
     transition: color 0.3s;
     position: relative; /* 添加相对定位以使背景色块定位于图标 */
@@ -208,8 +208,8 @@ body#index-page .social-icons {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 40px; /* 背景色块的宽度 */
-    height: 40px; /* 背景色块的高度 */
+    width: 30px; /* 缩小背景色块的宽度 */
+    height: 30px; /* 缩小背景色块的高度 */
     background-color: rgba(255, 255, 255, 0.2); /* 半透明白色背景 */
     border-radius: 50%; /* 圆形背景 */
     backdrop-filter: blur(10px); /* 毛玻璃效果 */
@@ -345,11 +345,16 @@ footer ul li a:hover {
     }
 
     .social-icons {
-        gap: 10px; /* 减小图标之间的间距 */
+        gap: 5px; /* 减小图标之间的间距 */
     }
 
     .social-icons a {
         font-size: 18px;
-        margin: 0 5px;
+        margin: 0 2px; /* 进一步减少水平间距 */
+    }
+
+    .social-icons a::before {
+        width: 25px; /* 进一步缩小背景色块的宽度 */
+        height: 25px; /* 进一步缩小背景色块的高度 */
     }
 }
