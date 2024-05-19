@@ -116,6 +116,9 @@ body#index-page .button {
 
 body#index-page .social-icons {
     justify-content: center; /* 社交图标居中 */
+    display: flex;
+    flex-wrap: wrap; /* 当屏幕较小时，允许图标换行 */
+    gap: 10px; /* 图标之间的间距 */
 }
 
 .profile-image {
@@ -307,6 +310,8 @@ footer ul li a:hover {
     .social-icons {
         display: flex;
         justify-content: center;
+        flex-wrap: wrap; /* 当屏幕较小时，允许图标换行 */
+        gap: 10px; /* 图标之间的间距 */
         margin-top: 10px;
     }
 
