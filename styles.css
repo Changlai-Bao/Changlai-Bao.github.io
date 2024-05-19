@@ -1,3 +1,4 @@
+/* 保留原有样式 */
 body {
     font-family: 'Montserrat', sans-serif;
     font-optical-sizing: auto;
@@ -188,10 +189,52 @@ body#index-page .social-icons {
     margin: 0 10px;
     font-size: 24px;
     transition: color 0.3s;
+    position: relative; /* 添加相对定位以使背景色块定位于图标 */
 }
 
 .social-icons a:hover {
-    color: #0073e6;
+    color: #fff; /* 悬停时文字变为白色以确保可见性 */
+}
+
+.social-icons a::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40px; /* 背景色块的宽度 */
+    height: 40px; /* 背景色块的高度 */
+    background-color: rgba(255, 255, 255, 0.2); /* 半透明白色背景 */
+    border-radius: 50%; /* 圆形背景 */
+    backdrop-filter: blur(10px); /* 毛玻璃效果 */
+    transform: translate(-50%, -50%); /* 使背景色块居中 */
+    z-index: -1; /* 确保背景色块在图标下方 */
+    transition: background-color 0.3s;
+}
+
+.social-icons a:hover::before {
+    background-color: rgba(255, 255, 255, 0.5); /* 悬停时背景色块变为较浅的半透明白色 */
+}
+
+.contact-info {
+    display: inline-block;
+    padding: 2px 8px;
+    background: rgba(255, 255, 255, 0.2); /* 半透明白色背景 */
+    backdrop-filter: blur(10px); /* 毛玻璃效果 */
+    border-radius: 5px; /* 圆角背景 */
+    transition: background 0.3s;
+}
+
+.contact-info a {
+    color: #000; /* 确保邮箱链接的颜色在背景上可见 */
+    text-decoration: none;
+}
+
+.contact-info:hover {
+    background: rgba(255, 255, 255, 0.5); /* 悬停时背景色变浅 */
+}
+
+.contact-info:hover a {
+    color: #0073e6; /* 悬停时改变链接颜色 */
 }
 
 footer {
