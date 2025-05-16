@@ -1,38 +1,52 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>个人简介</title>
+    <title>Persönliches Profil</title>
     <link rel="stylesheet" href="../css/global.css">
     <script src="https://kit.fontawesome.com/4cd571e392.js" crossorigin="anonymous"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+        
+        :root {
+            --x-position: 0px;
+            --y-position: 0px;
+        }
+        
+        .button {
+            background-image: radial-gradient(
+                circle at var(--x-position) var(--y-position),
+                rgba(255, 255, 255, 0.4) 0%,
+                rgba(255, 255, 255, 0.2) 50%,
+                rgba(255, 255, 255, 0.1) 100%
+            );
+        }
     </style>
 </head>
 <body id="index-page">
     <div class="language-switcher">
-        <a href="../index.html">
-            <img src="../images/flag_DE.png" alt="德国国旗"> Deutsch
+        <a href="../index.html" class="active">
+            <img src="../images/flag_DE.png" alt="German Flag"> Deutsch
         </a>
         <a href="../en/index.html">
-            <img src="../images/flag_EN.png" alt="英国国旗"> English
+            <img src="../images/flag_EN.png" alt="English Flag"> English
         </a>
-        <a href="../cn/index.html" class="active">
-            <img src="../images/flag_CN.png" alt="中国国旗"> 中文
+        <a href="../cn/index.html">
+            <img src="../images/flag_CN.png" alt="Chinese Flag"> 中文
         </a>
     </div>
     <div class="container">
         <div class="profile-image">
-            <img src="../images/Profilbild.jpg" alt="个人照片">
+            <img src="../images/Profilbild.jpg" alt="Profilbild">
         </div>
         <div class="profile-content">
-            <h1>你好，我是鲍昌来</h1>
-            <p>来自中国。目前在乔治·西蒙·欧姆纽伦堡应用技术大学学习。</p>
+            <h1>Hallo, ich bin Changlai Bao</h1>
+            <p>Aus China. Im Studium an der Technischen Hochschule Georg Simon Ohm in Nürnberg.</p>
             <div class="buttons">
-                <a href="projects.html" class="button">我的项目</a>
-                <a href="resume.html" class="button">个人简历</a>
-                <a href="contact.html" class="button">联系方式</a>
+                <a href="projects.html" class="button">Meine Projekte</a>
+                <a href="resume.html" class="button">Lebenslauf</a>
+                <a href="contact.html" class="button">Kontakt</a>
             </div>
             <div class="social-icons">
                 <a href="https://github.com/Changlai-Bao" target="_blank"><i class="fab fa-github"></i></a>
@@ -44,7 +58,7 @@
         </div>
     </div>
     <footer>
-        <p>© 2025 鲍昌来 </p>
+        <p>© 2025 Changlai Bao</p>
     </footer>
     <script src="../js/transition.js"></script>
 </body>
